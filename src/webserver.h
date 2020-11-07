@@ -1,0 +1,3 @@
+
+void WEBsetup();
+void WEBloop();

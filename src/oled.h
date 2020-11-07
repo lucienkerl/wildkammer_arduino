@@ -1,0 +1,2 @@
+void OLEDsetup();
+void OLEDloop();

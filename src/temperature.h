@@ -1,0 +1,2 @@
+void TEMPloop();
+float TEMPgetTemperature();
