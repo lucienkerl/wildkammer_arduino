@@ -2,7 +2,7 @@
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
-#define ONE_WIRE_PIN D4
+#define ONE_WIRE_PIN D3
 OneWire oneWire(ONE_WIRE_PIN);
 DallasTemperature sensors(&oneWire);
 
