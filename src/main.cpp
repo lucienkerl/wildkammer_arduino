@@ -8,6 +8,7 @@
 #include <temperature.h>
 #include <influx.h>
 #include <config.h>
+#include <ArduinoOTA.h>
 
 void setup()
 {
@@ -31,11 +32,13 @@ void setup()
   Serial.print("Got IP: ");
   Serial.println(WiFi.localIP());
 
+  ArduinoOTA.begin();
   WEBsetup();
 }
 
 void loop()
 {
+  ArduinoOTA.handle();
   TEMPloop();
   WEBloop();
   INFLUXloop();
