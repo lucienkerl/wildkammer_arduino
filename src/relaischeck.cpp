@@ -38,6 +38,9 @@ void RELAYrunCheck()
         digitalWrite(RELAY_PIN, HIGH);
         relayState = false;
     }
+    else if (!relayState && TEMPgetTemperature() <= RCminTemperature + 1)
+    { // when relay is off and temperature is not yet 1C warmer than minTemp = keep off
+    }
     else
     {
         // Turn on fridge
