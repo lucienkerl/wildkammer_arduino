@@ -57,17 +57,26 @@ void handleSpecificArg()
 {
     String message = "";
 
-    if (server.arg("Temperature") == "")
-    { //Parameter not found
-
-        message = "Temperature Argument not found";
+    if (server.arg("minTemperature") == "")
+    {
+        message += "minTemperature Argument not found";
     }
     else
-    { //Parameter found
+    {
+        message += "minTemperature Argument = ";
+        message += server.arg("minTemperature"); //Gets the value of the query parameter
+        RCsetMinTemperature(server.arg("minTemperature").toFloat());
+    }
 
-        message = "Temperature Argument = ";
-        message += server.arg("Temperature"); //Gets the value of the query parameter
-        RCsetMinTemperature(server.arg("Temperature").toFloat());
+    if (server.arg("maxTemperature") == "")
+    {
+        message += "maxTemperature Argument not found";
+    }
+    else
+    {
+        message += "maxTemperature Argument = ";
+        message += server.arg("maxTemperature"); //Gets the value of the query parameter
+        RCsetMaxTemperature(server.arg("maxTemperature").toFloat());
     }
 
     server.send(200, "text / plain", message); //Returns the HTTP response
