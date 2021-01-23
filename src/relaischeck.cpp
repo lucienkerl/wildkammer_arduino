@@ -4,7 +4,7 @@
 
 const int RELAY_PIN = D6;
 
-long RCinterval = 60000;
+long RCinterval = 10000;
 long RCpreviousMillis = 0;
 
 float RCminTemperature = 4;
@@ -66,6 +66,11 @@ void RCsetMaxTemperature(float maxTemperature)
 float RCgetMinTemperature()
 {
     return RCminTemperature;
+}
+
+float RCgetMaxTemperature()
+{
+    return RCmaxTemperature;
 }
 
 bool RCgetRelayState()

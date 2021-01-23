@@ -24,6 +24,7 @@ void INFLUXloop()
         // Add data
         pointDevice.addField("temperature", TEMPgetTemperature());
         pointDevice.addField("minTemperature", RCgetMinTemperature());
+        pointDevice.addField("maxTemperature", RCgetMaxTemperature());
         pointDevice.addField("relayState", RCgetRelayState());
 
         // Write data
